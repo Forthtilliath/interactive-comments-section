@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="styles/css/style.css" />
+
+        <script src="script.js" defer></script>
+
+        <title>Frontend Mentor | Interactive comments section</title>
+    </head>
+    <body>
+        <!-- Pull dynamic content from the data.json file -->
+        <main class="container"></main>
+
+        <div class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+            Coded by <a href="https://www.frontendmentor.io/profile/Forthtilliath">Forth</a>.
+        </div>
+
+        <div aria-hidden="true" focusable="false" class="hide">
+            <svg>
+                <defs>
+                    <path
+                        id="reply"
+                        d="M.227 4.316 5.04.16a.657.657 0 0 1 1.085.497v2.189c4.392.05 7.875.93 7.875 5.093 0 1.68-1.082 3.344-2.279 4.214-.373.272-.905-.07-.767-.51 1.24-3.964-.588-5.017-4.829-5.078v2.404c0 .566-.664.86-1.085.496L.227 5.31a.657.657 0 0 1 0-.993Z"
+                        fill="currentColor"
+                    />
+                    <path
+                        id="plus"
+                        d="M6.33 10.896c.137 0 .255-.05.354-.149.1-.1.149-.217.149-.354V7.004h3.315c.136 0 .254-.05.354-.149.099-.1.148-.217.148-.354V5.272a.483.483 0 0 0-.148-.354.483.483 0 0 0-.354-.149H6.833V1.4a.483.483 0 0 0-.149-.354.483.483 0 0 0-.354-.149H4.915a.483.483 0 0 0-.354.149c-.1.1-.149.217-.149.354v3.37H1.08a.483.483 0 0 0-.354.15c-.1.099-.149.217-.149.353v1.23c0 .136.05.254.149.353.1.1.217.149.354.149h3.333v3.39c0 .136.05.254.15.353.098.1.216.149.353.149H6.33Z"
+                        fill="currentColor"
+                    />
+                    <path
+                        id="minus"
+                        d="M9.256 2.66c.204 0 .38-.056.53-.167.148-.11.222-.243.222-.396V.722c0-.152-.074-.284-.223-.395a.859.859 0 0 0-.53-.167H.76a.859.859 0 0 0-.53.167C.083.437.009.57.009.722v1.375c0 .153.074.285.223.396a.859.859 0 0 0 .53.167h8.495Z"
+                        fill="currentColor"
+                    />
+                </defs>
+            </svg>
+
+            <div id="template">
+                <article class="comment" data-id="{{id}}">
+                    <sidebar>
+                        <button class="btn_like">
+                            <svg viewBox="0 0 11 11">
+                                <use xlink:href="#plus"></use>
+                            </svg>
+                        </button>
+                        <div class="comment_likes">{{likes}}</div>
+                        <button class="btn_like">
+                            <svg viewBox="0 0 11 3">
+                                <use xlink:href="#minus"></use>
+                            </svg>
+                        </button>
+                    </sidebar>
+                    <div class="comments_wrapper">
+                        <header>
+                            <div class="header_left">
+                                <picture class="comment_image">
+                                    <source srcset="{{image_webp}}" type="image/webp" />
+                                    <img src="{{image_png}}" alt="avatar" />
+                                </picture>
+                                <span class="comment_username">{{username}}</span>
+                                <span class="comment_date">{{date}}</span>
+                            </div>
+                            <div class="header_right">
+                                <button class="btn_reply">
+                                    <svg viewBox="0 0 14 13">
+                                        <use xlink:href="#reply"></use>
+                                    </svg>
+                                    Reply
+                                </button>
+                            </div>
+                        </header>
+                        <div class="comment_content">{{content}}</div>
+                    </div>
+                </article>
+                
+                <article class="reply">
+                    <sidebar>
+                        <button class="btn_like">
+                            <svg viewBox="0 0 11 11">
+                                <use xlink:href="#plus"></use>
+                            </svg>
+                        </button>
+                        <div class="comment_likes">{{likes}}</div>
+                        <button class="btn_like">
+                            <svg viewBox="0 0 11 3">
+                                <use xlink:href="#minus"></use>
+                            </svg>
+                        </button>
+                    </sidebar>
+                    <div class="comments_wrapper">
+                        <header>
+                            <div class="header_left">
+                                <picture class="comment_image">
+                                    <source srcset="{{image_webp}}" type="image/webp" />
+                                    <img src="{{image_png}}" alt="avatar" />
+                                </picture>
+                                <span class="comment_username">{{username}}</span>
+                                <span class="comment_date">{{date}}</span>
+                            </div>
+                            <div class="header_right">
+                                <button class="btn_reply">
+                                    <svg viewBox="0 0 14 13">
+                                        <use xlink:href="#reply"></use>
+                                    </svg>
+                                    Reply
+                                </button>
+                            </div>
+                        </header>
+                        <div class="comment_content">
+                            <a class="comment_reply" href="#">@{{replying}}</a>{{content}}
+                        </div>
+                    </div>
+                </article>
+
+                <article class="reply_form">
+                    <div>
+                        <picture class="comment_image">
+                            <source srcset="{{image_webp}}" type="image/webp" />
+                            <img src="{{image_png}}" alt="avatar" />
+                        </picture>
+                    </div>
+                    <div>
+
+                    </div>
+                    <div>
+                        <button>Reply</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </body>
+</html>
