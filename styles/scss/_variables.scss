@@ -1,17 +1,12 @@
-:root {
-    --g-color-1: blue;
-    --g-color-2: yellow;
-    --g-color-3: red;
-}
+$font: 'Rubik', sans-serif;
 
-.iconColor1 {
-    --color-1: var(--g-color-1);
-    --color-2: var(--g-color-2);
-    --color-3: var(--g-color-1);
-}
+$cBlueModerate: hsl(238, 40%, 52%);
+$cBlueLightGrayish: hsl(239, 57%, 85%);
+$cRedSolf: hsl(358, 79%, 66%);
+$cRedPale: hsl(357, 100%, 86%);
 
-*:hover > .iconColor1 {
-    --color-1: var(--g-color-2);
-    --color-2: var(--g-color-1);
-    --color-3: var(--g-color-2);
-}
+$cBlueDark: hsl(212, 24%, 26%);
+$cBlueGrayish: hsl(211, 10%, 45%);
+$cGrayLight: hsl(223, 19%, 93%);
+$cGrayVeryLight: #f5f6fa;
+$cWhite: hsl(0, 0%, 100%);

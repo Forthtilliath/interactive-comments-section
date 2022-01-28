@@ -47,13 +47,13 @@
             <div id="template">
                 <article class="comment" data-id="{{id}}">
                     <sidebar>
-                        <button class="btn_like">
+                        <button class="btn_like" tabindex="-1">
                             <svg viewBox="0 0 11 11">
                                 <use xlink:href="#plus"></use>
                             </svg>
                         </button>
                         <div class="comment_likes">{{likes}}</div>
-                        <button class="btn_like">
+                        <button class="btn_like" tabindex="-1">
                             <svg viewBox="0 0 11 3">
                                 <use xlink:href="#minus"></use>
                             </svg>
@@ -63,14 +63,14 @@
                         <header>
                             <div class="header_left">
                                 <picture class="comment_image">
-                                    <source srcset="{{image_webp}}" type="image/webp" />
-                                    <img src="{{image_png}}" alt="avatar" />
+                                    <source {{image_webp}} type="image/webp" />
+                                    <img {{image_png}} alt="avatar" />
                                 </picture>
                                 <span class="comment_username">{{username}}</span>
                                 <span class="comment_date">{{date}}</span>
                             </div>
                             <div class="header_right">
-                                <button class="btn_reply">
+                                <button class="btn_reply" tabindex="-1">
                                     <svg viewBox="0 0 14 13">
                                         <use xlink:href="#reply"></use>
                                     </svg>
@@ -81,16 +81,18 @@
                         <div class="comment_content">{{content}}</div>
                     </div>
                 </article>
-                
+
+                <div class="replies_container"></div>
+
                 <article class="reply">
                     <sidebar>
-                        <button class="btn_like">
+                        <button class="btn_like" tabindex="-1">
                             <svg viewBox="0 0 11 11">
                                 <use xlink:href="#plus"></use>
                             </svg>
                         </button>
                         <div class="comment_likes">{{likes}}</div>
-                        <button class="btn_like">
+                        <button class="btn_like" tabindex="-1">
                             <svg viewBox="0 0 11 3">
                                 <use xlink:href="#minus"></use>
                             </svg>
@@ -100,14 +102,14 @@
                         <header>
                             <div class="header_left">
                                 <picture class="comment_image">
-                                    <source srcset="{{image_webp}}" type="image/webp" />
-                                    <img src="{{image_png}}" alt="avatar" />
+                                    <source {{image_webp}} type="image/webp" />
+                                    <img {{image_png}} alt="avatar" />
                                 </picture>
                                 <span class="comment_username">{{username}}</span>
                                 <span class="comment_date">{{date}}</span>
                             </div>
                             <div class="header_right">
-                                <button class="btn_reply">
+                                <button class="btn_reply" tabindex="-1">
                                     <svg viewBox="0 0 14 13">
                                         <use xlink:href="#reply"></use>
                                     </svg>
@@ -121,19 +123,21 @@
                     </div>
                 </article>
 
-                <article class="reply_form">
-                    <div>
-                        <picture class="comment_image">
-                            <source srcset="{{image_webp}}" type="image/webp" />
-                            <img src="{{image_png}}" alt="avatar" />
-                        </picture>
-                    </div>
-                    <div>
-
-                    </div>
-                    <div>
-                        <button>Reply</button>
-                    </div>
+                <article class="reply_to_comment">
+                    <form>
+                        <div class="comment_image">
+                            <picture>
+                                <source {{image_webp}} type="image/webp" />
+                                <img {{image_png}} alt="avatar" />
+                            </picture>
+                        </div>
+                        <div>
+                            <textarea name="comment"></textarea>
+                        </div>
+                        <div>
+                            <button>Reply</button>
+                        </div>
+                    </form>
                 </article>
             </div>
         </div>
