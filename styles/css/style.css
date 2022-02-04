@@ -145,6 +145,7 @@ body {
   background-color: transparent;
   color: #5457b6;
   font-size: 1rem;
+  font-weight: 500;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -182,17 +183,44 @@ body {
   border-radius: 5px;
   padding: 22px;
 }
+.reply_to_comment.reply {
+  width: 90%;
+  margin-left: 10%;
+}
 .reply_to_comment form {
   display: flex;
   gap: 15px;
 }
-.reply_to_comment form textarea {
-  border-radius: 10px;
-  border-color: #5457b6;
-  padding: 15px 20px;
+.reply_to_comment form .comment_input {
+  flex: 1;
 }
-.reply_to_comment form textarea:focus {
+.reply_to_comment form .comment_input textarea {
+  border-radius: 7px;
+  border-color: #c3c4ef;
+  padding: 15px 20px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.reply_to_comment form .comment_input textarea:focus {
+  border-color: #5457b6;
+}
+.reply_to_comment form .comment_input textarea:focus {
   outline: 1px #5457b6 solid;
+}
+.reply_to_comment form .comment_button button {
+  border: none;
+  color: white;
+  background-color: #5457b6;
+  padding: 12px 20px;
+  text-transform: uppercase;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.reply_to_comment form .comment_button button:hover {
+  background-color: #c3c4ef;
 }
 
 .attribution {

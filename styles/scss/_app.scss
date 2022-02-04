@@ -105,6 +105,7 @@ body {
             background-color: transparent;
             color: $cBlueModerate;
             font-size: 1rem;
+            font-weight: 500;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -149,17 +150,49 @@ body {
     border-radius: 5px;
     padding: 22px;
 
+    &.reply {
+        width: 90%;
+        margin-left: 10%;
+    }
+
     form {
         display: flex;
         gap: 15px;
 
-        textarea {
-            border-radius: 10px;
-            border-color: $cBlueModerate;
-            padding: 15px 20px;
+        .comment_input {
+            flex: 1;
 
-            &:focus {
-                outline: 1px $cBlueModerate solid;
+            textarea {
+                border-radius: 7px;
+                border-color: $cBlueLightGrayish;
+                padding: 15px 20px;
+                width: 100%;
+                cursor: pointer;
+                font-size: 1rem;
+
+                &:focus {
+                    border-color: $cBlueModerate;
+                }
+
+                &:focus {
+                    outline: 1px $cBlueModerate solid;
+                }
+            }
+        }
+
+        .comment_button button {
+            border: none;
+            color: $cWhite;
+            background-color: $cBlueModerate;
+            padding: 12px 20px;
+            text-transform: uppercase;
+            border-radius: 7px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 1rem;
+
+            &:hover {
+                background-color: $cBlueLightGrayish;
             }
         }
     }

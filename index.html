@@ -84,7 +84,7 @@
 
                 <div class="replies_container"></div>
 
-                <article class="reply">
+                <article class="comment reply">
                     <sidebar>
                         <button class="btn_like" tabindex="-1">
                             <svg viewBox="0 0 11 11">
@@ -131,10 +131,10 @@
                                 <img {{image_png}} alt="avatar" />
                             </picture>
                         </div>
-                        <div>
-                            <textarea name="comment"></textarea>
+                        <div class="comment_input">
+                            <textarea name="comment" rows="3">@{{replying}}</textarea>
                         </div>
-                        <div>
+                        <div class="comment_button">
                             <button>Reply</button>
                         </div>
                     </form>
